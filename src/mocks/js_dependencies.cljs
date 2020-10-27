@@ -193,6 +193,9 @@
 (def react-native-gradien #js {:default #js {}})
 
 (def push-notification-ios #js {})
+
+(def react-native-permissions #js {})
+
 ;; Update i18n_resources.cljs
 (defn mock [module]
   (case module
@@ -223,6 +226,7 @@
     "react-native-device-info" react-native-device-info
     "react-native-push-notification" react-native-push-notification
     "react-native-linear-gradient" react-native-gradien
+    "react-native-permissions" react-native-permissions
     "@react-native-community/push-notification-ios" push-notification-ios
     "./fleets.js" default-fleets
     "./chats.js" default-chats
