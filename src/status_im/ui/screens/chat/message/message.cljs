@@ -235,7 +235,8 @@
         [:<>
          [preview/preview-image {:message    message
                                  :visible    @visible
-                                 :on-close   #(reset! visible false)
+                                 :on-close   #(do (reset! visible false)
+                                                  (reagent/flush))
                                  :dimensions @dimensions}]
          [react/touchable-highlight {:on-press      (fn []
                                                       (reset! visible true)

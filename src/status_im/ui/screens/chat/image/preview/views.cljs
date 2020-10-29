@@ -23,11 +23,11 @@
                               :padding-horizontal 24
                               :justify-content    :center
                               :align-items        :center}}
-          [react/touchable-highlight {:on-press on-close
-                                      :style    {:background-color   colors/black-transparent-86
-                                                 :padding-horizontal 24
-                                                 :padding-vertical   11
-                                                 :border-radius      44}}
+          [react/touchable-opacity {:on-press on-close
+                                    :style  {:background-color   colors/black-transparent-86
+                                             :padding-horizontal 24
+                                             :padding-vertical   11
+                                             :border-radius      44}}
            [quo/text {:style {:color colors/white-persist}}
             (i18n/label :t/close)]]
 
@@ -36,7 +36,7 @@
                              :on-cancel #(reset! show-sheet false)}
            [sheets/image-long-press message #(do (reset! show-sheet false)
                                                  (on-close))]]
-          [react/touchable-highlight
+          [react/touchable-opacity
            {:on-press #(reset! show-sheet true)
             :style    {:background-color colors/black-transparent-86
                        :border-radius    44
