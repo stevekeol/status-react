@@ -176,13 +176,13 @@
                                  (hide)
                                  (re-frame/dispatch [:chat.ui/show-profile from]))}])
      (when-not cant-be-replied
-      [quo/list-item
-       {:theme    :accent
-        :title    (i18n/label :t/message-reply)
-        :icon     :main-icons/reply
-        :on-press #(do
-                     (hide)
-                     (re-frame/dispatch [:chat.ui/reply-to-message message]))}])
+       [quo/list-item
+        {:theme    :accent
+         :title    (i18n/label :t/message-reply)
+         :icon     :main-icons/reply
+         :on-press #(do
+                      (hide)
+                      (re-frame/dispatch [:chat.ui/reply-to-message message]))}])
      ;; we have only base64 string for image, so we need to find a way how to copy it
      #_[quo/list-item
         {:theme    :accent
