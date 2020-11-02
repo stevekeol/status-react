@@ -123,6 +123,11 @@ def jscFlavor = 'org.webkit:android-jsc:+'
  */
 def enableHermes = project.ext.react.get("enableHermes", false);
 
+/**
+ * Exclude google library so we can publish to external android stores
+ */
+def googleFree = project.env.get("GOOGLE_FREE", false)
+
 def getVersionCode = { ->
     new ByteArrayOutputStream().withStream { stdOut ->
         if (project.hasProperty("versionCode")) {
@@ -337,6 +342,13 @@ dependencies {
     implementation 'com.github.status-im:function:0.0.1'
     implementation 'com.facebook.fresco:fresco:2.0.0'
     implementation 'com.facebook.fresco:animated-gif:2.0.0'
+    if (googleFree){
+        implementation (project(':react-native-device-info')) {
+            exclude group:'com.google.android.gms'
+            exclude group:'com.google.firebase'
+            exclude group:'com.android.installreferrer'
+        }
+    }
 }
 
 def getLocalNDKDir = { ->
