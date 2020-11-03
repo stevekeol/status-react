@@ -1022,7 +1022,6 @@
     "send-logs": "Relatar uma falha",
     "send-logs-to": "Relatar um falha para {{email}}",
     "send-message": "Enviar mensagem",
-    "send-push-notifications": "Enviar notificações push",
     "send-push-notifications-description": "Quando desativado, a pessoa que recebe suas mensagens não será notificada de suas novas mensagens",
     "send-request": "Enviar pedido",
     "send-request-amount": "Quantidade",

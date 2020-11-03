@@ -1041,7 +1041,6 @@
     "send-logs": "Сообщить об ошибке",
     "send-logs-to": "Сообщить об ошибке на {{email}}",
     "send-message": "Отправить сообщение",
-    "send-push-notifications": "Отправлять push-уведомления",
     "send-push-notifications-description": "В случае, если данная функция будет отключена, пользователь не получит уведомление о новом сообщении.",
     "send-request": "Послать запрос",
     "send-request-amount": "Сумма",
