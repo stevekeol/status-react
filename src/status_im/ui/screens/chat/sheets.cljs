@@ -7,6 +7,7 @@
             [status-im.ui.components.chat-icon.screen :as chat-icon]
             [status-im.multiaccounts.core :as multiaccounts]
             [status-im.ui.screens.chat.styles.message.sheets :as sheets.styles]
+            [status-im.clipboard.core :as clipboard]
             [quo.core :as quo]))
 
 (defn hide-sheet-and-dispatch [event]
@@ -187,13 +188,13 @@
                           (re-frame/dispatch [:navigate-back]))
                         (hide-sheet-and-dispatch [:chat.ui/reply-to-message message]))}])
        ;; we have only base64 string for image, so we need to find a way how to copy it
-       #_[quo/list-item
-          {:theme    :accent
-           :title    :t/sharing-copy-to-clipboard
-           :icon     :main-icons/copy
-           :on-press (fn []
-                       (re-frame/dispatch [:bottom-sheet/hide])
-                       (react/copy-to-clipboard (:image content)))}]
+       [quo/list-item
+        {:theme    :accent
+         :title    (i18n/label :t/sharing-copy-to-clipboard)
+         :icon     :main-icons/copy
+         :on-press (fn []
+                     (re-frame/dispatch [:bottom-sheet/hide])
+                     (clipboard/copy-image (:image content) println println))}]
        [quo/list-item
         {:theme    :accent
          :title    (i18n/label :t/save)
