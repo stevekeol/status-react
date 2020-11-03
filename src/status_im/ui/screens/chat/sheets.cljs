@@ -196,7 +196,8 @@
        :title    (i18n/label :t/save)
        :icon     :main-icons/download
        :on-press (fn []
-                   (hide-sheet-and-dispatch [:chat.ui/save-image-to-gallery (:image content)]))}]
+                   (hide)
+                   (re-frame/dispatch [:chat.ui/save-image-to-gallery (:image content)]))}]
      ;; we have only base64 string for image, so we need to find a way how to share it
      #_[quo/list-item
         {:theme    :accent
