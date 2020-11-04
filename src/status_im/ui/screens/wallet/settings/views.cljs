@@ -100,7 +100,7 @@
                                       (when (seq custom-tokens)
                                         [{:title (i18n/label :t/custom)
                                           :data  custom-tokens}])
-                                      [{:title (i18n/label :t/default)
+                                      [{:title (i18n/label :t/default-assets)
                                         :data  default-tokens}])
         :key-fn                      :address
         :stickySectionHeadersEnabled false
