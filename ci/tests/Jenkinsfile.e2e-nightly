@@ -49,7 +49,7 @@ pipeline {
             sh """
               python3 -m pytest -m testrail_id \
                 -m "not upgrade" \
-                -n24 --rerun_count=2 \
+                -n16 --rerun_count=2 \
                 --testrail_report=True \
                 --network=${params.NETWORK} \
                 --apk=${params.APK_NAME}
